@@ -17,6 +17,7 @@
 // 用 @ 可以直接进入要找的文件夹，不需要用 ../ 只类的方式
 import Todo from "@/components/Todo.vue";
 import TodoForm from "@/components/TodoForm.vue";
+import axios from 'axios';
 
 export default {
     data(){
@@ -35,12 +36,24 @@ export default {
         },
         addTodo(todo){
             this.todoList.push(todo);
+            axios 
+            // 链接到firebase，进入data.json, 加载todoList
+            .put("https://xie00053-vue-and-axios.firebaseio.com/data.json", this.todoList)
+            // 检测如果 .put 通过的话，运行.then
+            .then(response => {
+                console.log(response);
+                console.log("Your data was saved status:" + response.status)
+            })
+            // 检测如果 .put 没有通过的话，运行.catch
+            .catch(erro => {
+                console.log(error);
+            })
         }
     }
 };
 </script>
 
-<style>
+<style scoped>
 ul{
     list-style: none;
     width: 50%;
