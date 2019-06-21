@@ -1,7 +1,10 @@
 <template>
     <div>
         <h1>Todo List</h1>
+        <!-- <TodoForm @newTodo="addTodo" /> 如果需要在里面加入slot的内容，需要把形式改成下面的样子
+            它显示的是TodoForm.vue的 template 里的内容-->
         <TodoForm @newTodo="addTodo">
+            <!-- TodoForm.vue里添加的slot，必须包含在这个 TodoForm 里面 -->
             <h2 slot="title">Add a Todo</h2>
             <p slot="desc">Your Todos will be saved</p>
             <h3>woshishui</h3>
