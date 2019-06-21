@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Todo List</h1>
-        <Todo :todos="todolist"/>
+        <Todo :todos="todolist" @removeTodo="appDeleteTodo"/>
     </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
     },
     components: {
         Todo
+    },
+    methods: {
+        appDeleteTodo(index) {
+            // 每次删除一个list
+            this.todolist.splice(index, 1);
+        }
     }
 };
 </script>

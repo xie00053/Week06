@@ -23,6 +23,8 @@ export default {
     methods: {
         todoDone(index) {
             console.log(index);
+            // week6, $emit a child component to parent
+            this.$emit("removeTodo", index)
         }
     }
 }
