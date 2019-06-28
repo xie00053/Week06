@@ -5,7 +5,6 @@
             <input type="text" v-model="newTodo">
         </form>
         <slot name="desc"></slot>
-
         <br/>
         <slot>Default slot, placeholder content</slot>
     </div>

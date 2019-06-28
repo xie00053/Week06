@@ -19,7 +19,7 @@ export default {
         }
     },
 
-    // 在component里，parents 用props 传信息给children, 反过来 children 通过 method 将信息传送给 parent。
+    // 在component里，parents 用props 传信息给children, 反过来 children 通过 $emit 将信息传送给 parent。
     methods: {
         todoDone(index) {
             console.log(index);
