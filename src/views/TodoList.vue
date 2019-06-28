@@ -90,6 +90,7 @@ ul{
     list-style: none;
     width: 50%;
     margin: 0 auto;
+    border-bottom:1px solid blue;
 }
 
 ul li {
